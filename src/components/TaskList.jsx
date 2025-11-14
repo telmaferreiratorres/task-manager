@@ -11,7 +11,10 @@ function TaskList({ tasks, onDeleteTask, onUpdateTask, onEditTask }) {
     return (
       <div className="space-y-4">
         {tasks.map((task) => (
-          <div key={task.id} className="bg-white rounded-lg shadow-md p-4">
+          <div 
+          key={task.id} 
+          className="bg-white rounded-lg shadow-md p-4 transform transition-all duration-300 hover:scale-105 hover:shadow-xl animate-in fade-in slide-in-from-bottom-4"
+        >
             <div className="flex items-start justify-between">
               
               <div className="flex-1">
