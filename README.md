@@ -1,16 +1,128 @@
-# React + Vite
+# Task Manager - Gestionnaire de tâches
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Application de gestion de tâches développée avec React, Vite et Tailwind CSS v4.
 
-Currently, two official plugins are available:
+## 👤 Informations
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **Nom :** FERREIRA TORRES
+- **Prénom :** Telma
+- **Formation :** Master DevOps - Normandie Web School
+- **Projet :** TP Intégration Tailwind CSS par Framework
 
-## React Compiler
+## 🚀 Technologies utilisées
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- **React** - Bibliothèque JavaScript pour l'interface utilisateur
+- **Vite** - Outil de build rapide
+- **Tailwind CSS v4** - Framework CSS utility-first
+- **JavaScript ES6+** - Langage de programmation
 
-## Expanding the ESLint configuration
+## 📋 Fonctionnalités implémentées
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+### Fonctionnalités principales
+- ✅ Ajout de tâches avec description et catégorie
+- ✅ Modification de tâches existantes
+- ✅ Suppression de tâches
+- ✅ Catégories : Travail, Personnel, Urgent
+- ✅ Badges colorés par catégorie (bleu, vert, rouge)
+- ✅ Message "Aucune tâche à afficher" quand la liste est vide
+- ✅ Design responsive avec Tailwind
+- ✅ Interface moderne avec dégradés et ombres
+
+### Architecture
+- **App.jsx** : Composant principal gérant l'état global
+- **TaskForm.jsx** : Formulaire d'ajout/modification de tâches
+- **TaskList.jsx** : Affichage de la liste des tâches
+
+## 💻 Installation et lancement
+
+### Prérequis
+- Node.js (version 18 ou supérieure)
+- npm ou yarn
+
+### Installation
+
+1. Cloner le dépôt :
+```bash
+git clone https://github.com/telmaferreiratorres/task-manager.git
+cd task-manager
+```
+
+2. Installer les dépendances :
+```bash
+npm install
+```
+
+### Lancement
+
+**Mode développement :**
+```bash
+npm run dev
+```
+L'application sera accessible sur `http://localhost:5173`
+
+**Build de production :**
+```bash
+npm run build
+```
+
+**Prévisualiser le build :**
+```bash
+npm run preview
+```
+
+## 📁 Structure du projet
+```
+task-manager/
+├── src/
+│   ├── components/
+│   │   ├── TaskForm.jsx      # Formulaire d'ajout/modification
+│   │   └── TaskList.jsx      # Liste des tâches
+│   ├── App.jsx               # Composant principal
+│   ├── main.jsx              # Point d'entrée
+│   └── index.css             # Styles Tailwind
+├── public/                   # Fichiers statiques
+├── index.html                # Template HTML
+├── vite.config.js            # Configuration Vite
+├── tailwind.config.js        # Configuration Tailwind
+├── postcss.config.js         # Configuration PostCSS
+└── package.json              # Dépendances du projet
+```
+
+## 🎨 Tailwind CSS v4
+
+Ce projet utilise Tailwind CSS v4 avec le plugin Vite officiel `@tailwindcss/vite`.
+
+Configuration dans `vite.config.js` :
+```javascript
+import tailwindcss from '@tailwindcss/vite'
+
+export default defineConfig({
+  plugins: [react(), tailwindcss()],
+})
+```
+
+## 📝 Fonctionnalités non implémentées
+
+Aucune - Toutes les fonctionnalités demandées ont été réalisées.
+
+## 🎁 Améliorations possibles (bonus)
+
+- [ ] Ajout d'une date limite pour chaque tâche
+- [ ] Tri des tâches par date ou priorité
+- [ ] Système de filtrage par catégorie
+- [ ] Persistance des données avec localStorage
+- [ ] Animations lors de l'ajout/suppression
+
+## 📦 Dépendances principales
+```json
+{
+  "react": "^18.3.1",
+  "react-dom": "^18.3.1",
+  "@tailwindcss/vite": "^4.0.0-beta.7",
+  "vite": "^6.0.1"
+}
+```
+
+## 📄 Licence
+
+Projet réalisé dans le cadre d'un TP académique - Normandie Web School 2024-2025
