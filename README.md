@@ -28,10 +28,31 @@ Application de gestion de tâches développée avec React, Vite et Tailwind CSS 
 - ✅ Design responsive avec Tailwind
 - ✅ Interface moderne avec dégradés et ombres
 
+## 📋 Fonctionnalités implémentées
+
+### Fonctionnalités principales
+- ✅ Ajout de tâches avec description et catégorie
+- ✅ Modification de tâches existantes
+- ✅ Suppression de tâches
+- ✅ Catégories : Travail, Personnel, Urgent
+- ✅ Badges colorés par catégorie (bleu, vert, rouge)
+- ✅ Message "Aucune tâche à afficher" quand la liste est vide
+- ✅ Design responsive avec Tailwind
+- ✅ Interface moderne avec dégradés et ombres
+
+### Bonus implémentés
+- ✅ **Persistance des données** : localStorage pour sauvegarder les tâches (refresh-proof)
+- ✅ **Filtrage par catégorie** : Boutons interactifs pour filtrer Tout/Travail/Personnel/Urgent
+- ✅ **Animations fluides** : 
+  - Apparition des tâches avec fade-in et slide-in
+  - Effet hover sur les cartes (scale + shadow)
+  - Effet "press" sur les boutons
+- ✅ **Bouton "Tout supprimer"** : Suppression de toutes les tâches avec confirmation
+
 ### Architecture
-- **App.jsx** : Composant principal gérant l'état global
-- **TaskForm.jsx** : Formulaire d'ajout/modification de tâches
-- **TaskList.jsx** : Affichage de la liste des tâches
+- **App.jsx** : Composant principal gérant l'état global (tâches, filtrage, édition)
+- **TaskForm.jsx** : Formulaire d'ajout/modification avec useEffect pour le mode édition
+- **TaskList.jsx** : Affichage dynamique de la liste avec map() et animations
 
 ## 💻 Installation et lancement
 
@@ -104,14 +125,6 @@ export default defineConfig({
 ## 📝 Fonctionnalités non implémentées
 
 Aucune - Toutes les fonctionnalités demandées ont été réalisées.
-
-## 🎁 Améliorations possibles (bonus)
-
-- [ ] Ajout d'une date limite pour chaque tâche
-- [ ] Tri des tâches par date ou priorité
-- [ ] Système de filtrage par catégorie
-- [ ] Persistance des données avec localStorage
-- [ ] Animations lors de l'ajout/suppression
 
 ## 📦 Dépendances principales
 ```json
