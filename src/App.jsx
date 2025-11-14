@@ -4,13 +4,21 @@ import TaskList from './components/TaskList'
 
 function App() {
   const [tasks, setTasks] = useState([])
+  const [editingTask, setEditingTask] = useState(null)
 
   const addTask = (task) => {
-    const newTask = {
-      id: Date.now(),
-      ...task
+    if (editingTask) {
+      // Mode modification
+      updateTask(editingTask.id, task)
+      setEditingTask(null)
+    } else {
+      // Mode ajout
+      const newTask = {
+        id: Date.now(),
+        ...task
+      }
+      setTasks([...tasks, newTask])
     }
-    setTasks([...tasks, newTask])
   }
 
   const deleteTask = (id) => {
@@ -23,19 +31,27 @@ function App() {
     ))
   }
 
+  const handleEdit = (task) => {
+    setEditingTask(task)
+  }
+
   return (
     <div className="min-h-screen bg-linear-to-br from-blue-50 to-purple-50 py-8">
       <div className="max-w-4xl mx-auto px-4">
         <h1 className="text-4xl font-bold text-center text-gray-800 mb-8">
-          📝 Ma To-Do List du jour
+          📝 To-Do List
         </h1>
         
-        <TaskForm onAddTask={addTask} />
+        <TaskForm 
+          onAddTask={addTask}
+          editingTask={editingTask}
+        />
         
         <TaskList 
           tasks={tasks}
           onDeleteTask={deleteTask}
           onUpdateTask={updateTask}
+          onEditTask={handleEdit}
         />
       </div>
     </div>

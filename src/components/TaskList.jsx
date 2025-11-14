@@ -1,4 +1,4 @@
-function TaskList({ tasks, onDeleteTask, onUpdateTask }) {
+function TaskList({ tasks, onDeleteTask, onUpdateTask, onEditTask }) {
   
     if (tasks.length === 0) {
       return (
@@ -26,6 +26,12 @@ function TaskList({ tasks, onDeleteTask, onUpdateTask }) {
               </div>
   
               <div className="flex gap-2 ml-4">
+                <button
+                  onClick={() => onEditTask(task)}
+                  className="px-3 py-1 bg-yellow-500 hover:bg-yellow-600 text-white rounded-lg text-sm transition duration-200"
+                >
+                  Modifier
+                </button>
                 <button
                   onClick={() => onDeleteTask(task.id)}
                   className="px-3 py-1 bg-red-500 hover:bg-red-600 text-white rounded-lg text-sm transition duration-200"

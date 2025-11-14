@@ -1,8 +1,18 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 
-function TaskForm({ onAddTask }) {
+function TaskForm({ onAddTask, editingTask }) {
   const [description, setDescription] = useState('')
   const [category, setCategory] = useState('Travail')
+
+  useEffect(() => {
+    if (editingTask) {
+      setDescription(editingTask.description)
+      setCategory(editingTask.category)
+    } else {
+      setDescription('')
+      setCategory('Travail')
+    }
+  }, [editingTask])
 
   const handleSubmit = (e) => {
     e.preventDefault()
@@ -55,7 +65,7 @@ function TaskForm({ onAddTask }) {
           type="submit"
           className="w-full bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded-lg transition duration-200"
         >
-          Ajouter la tâche
+          {editingTask ? 'Modifier la tâche' : 'Ajouter la tâche'}
         </button>
         
       </div>
