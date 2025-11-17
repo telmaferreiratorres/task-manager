@@ -1,58 +1,62 @@
 # Task Manager - Gestionnaire de tâches
 
-Application de gestion de tâches développée avec React, Vite et Tailwind CSS v4.
+Application de gestion de tâches développée avec React, Vite, Tailwind CSS v4 et optimisée avec Lightning CSS.
 
 ## 👤 Informations
 
 - **Nom :** FERREIRA TORRES
 - **Prénom :** Telma
 - **Formation :** Master DevOps - Normandie Web School
-- **Projet :** TP Intégration Tailwind CSS par Framework
+- **Projet :** TP2 - Intégration Lightning CSS par Framework (Édition 2)
+- **Dépôt GitHub :** https://github.com/telmaferreiratorres/task-manager
 
 ## 🚀 Technologies utilisées
 
-- **React** - Bibliothèque JavaScript pour l'interface utilisateur
-- **Vite** - Outil de build rapide
+- **React 18.3.1** - Bibliothèque JavaScript pour l'interface utilisateur
+- **Vite 7.2.2** - Outil de build ultra-rapide
 - **Tailwind CSS v4** - Framework CSS utility-first
+- **Lightning CSS** - Transformateur et optimiseur CSS haute performance
 - **JavaScript ES6+** - Langage de programmation
 
-## 📋 Fonctionnalités implémentées
+## ⚡ Lightning CSS - Optimisations
+
+### Fonctionnalités implémentées
+
+✅ **Nesting CSS** - Styles imbriqués pour meilleure organisation  
+✅ **Autoprefixing** - Préfixes navigateurs ajoutés automatiquement  
+✅ **Minification** - CSS optimisé en production  
+✅ **Propriétés logiques** - `padding-inline`, `margin-block-end` pour meilleure internationalisation  
+✅ **Fonction clamp()** - Typographie responsive fluide  
+✅ **Media queries modernes** - Syntaxe `(width >= 768px)`  
+
+### Résultats
+
+- **CSS avant Lightning CSS :** 26.62 kB
+- **CSS après Lightning CSS :** 21.83 kB
+- **Réduction :** ~4.8 kB (-18%)
+- **Gzippé :** 4.61 kB
+
+## 📋 Fonctionnalités de l'application
 
 ### Fonctionnalités principales
 - ✅ Ajout de tâches avec description et catégorie
 - ✅ Modification de tâches existantes
 - ✅ Suppression de tâches
 - ✅ Catégories : Travail, Personnel, Urgent
-- ✅ Badges colorés par catégorie (bleu, vert, rouge)
-- ✅ Message "Aucune tâche à afficher" quand la liste est vide
-- ✅ Design responsive avec Tailwind
-- ✅ Interface moderne avec dégradés et ombres
+- ✅ Badges colorés par catégorie
+- ✅ Design responsive avec animations
 
-## 📋 Fonctionnalités implémentées
-
-### Fonctionnalités principales
-- ✅ Ajout de tâches avec description et catégorie
-- ✅ Modification de tâches existantes
-- ✅ Suppression de tâches
-- ✅ Catégories : Travail, Personnel, Urgent
-- ✅ Badges colorés par catégorie (bleu, vert, rouge)
-- ✅ Message "Aucune tâche à afficher" quand la liste est vide
-- ✅ Design responsive avec Tailwind
-- ✅ Interface moderne avec dégradés et ombres
-
-### Bonus implémentés
-- ✅ **Persistance des données** : localStorage pour sauvegarder les tâches (refresh-proof)
-- ✅ **Filtrage par catégorie** : Boutons interactifs pour filtrer Tout/Travail/Personnel/Urgent
-- ✅ **Animations fluides** : 
-  - Apparition des tâches avec fade-in et slide-in
-  - Effet hover sur les cartes (scale + shadow)
-  - Effet "press" sur les boutons
-- ✅ **Bouton "Tout supprimer"** : Suppression de toutes les tâches avec confirmation
+### Fonctionnalités bonus
+- ✅ Persistance avec localStorage
+- ✅ Système de filtrage par catégorie
+- ✅ Animations fluides (fade-in, hover effects)
+- ✅ Bouton "Tout supprimer" avec confirmation
 
 ### Architecture
-- **App.jsx** : Composant principal gérant l'état global (tâches, filtrage, édition)
-- **TaskForm.jsx** : Formulaire d'ajout/modification avec useEffect pour le mode édition
-- **TaskList.jsx** : Affichage dynamique de la liste avec map() et animations
+- **App.jsx** - Composant principal gérant l'état global
+- **TaskForm.jsx** - Formulaire d'ajout/modification
+- **TaskList.jsx** - Affichage de la liste des tâches
+- **custom.css** - Styles avec CSS Nesting
 
 ## 💻 Installation et lancement
 
@@ -61,15 +65,12 @@ Application de gestion de tâches développée avec React, Vite et Tailwind CSS 
 - npm ou yarn
 
 ### Installation
-
-1. Cloner le dépôt :
 ```bash
+# Cloner le dépôt
 git clone https://github.com/telmaferreiratorres/task-manager.git
 cd task-manager
-```
 
-2. Installer les dépendances :
-```bash
+# Installer les dépendances
 npm install
 ```
 
@@ -79,7 +80,7 @@ npm install
 ```bash
 npm run dev
 ```
-L'application sera accessible sur `http://localhost:5173`
+→ Accessible sur `http://localhost:5173`
 
 **Build de production :**
 ```bash
@@ -96,46 +97,62 @@ npm run preview
 task-manager/
 ├── src/
 │   ├── components/
-│   │   ├── TaskForm.jsx      # Formulaire d'ajout/modification
-│   │   └── TaskList.jsx      # Liste des tâches
-│   ├── App.jsx               # Composant principal
-│   ├── main.jsx              # Point d'entrée
-│   └── index.css             # Styles Tailwind
-├── public/                   # Fichiers statiques
-├── index.html                # Template HTML
-├── vite.config.js            # Configuration Vite
-├── tailwind.config.js        # Configuration Tailwind
-├── postcss.config.js         # Configuration PostCSS
-└── package.json              # Dépendances du projet
+│   │   ├── TaskForm.jsx
+│   │   └── TaskList.jsx
+│   ├── styles/
+│   │   └── custom.css        # CSS avec nesting
+│   ├── App.jsx
+│   ├── main.jsx
+│   └── index.css
+├── vite.config.js             # Configuration Vite + Lightning CSS
+└── package.json
 ```
 
-## 🎨 Tailwind CSS v4
+## 🔧 Configuration Lightning CSS
 
-Ce projet utilise Tailwind CSS v4 avec le plugin Vite officiel `@tailwindcss/vite`.
-
-Configuration dans `vite.config.js` :
+Le fichier `vite.config.js` intègre Lightning CSS via `vite-plugin-lightningcss` :
 ```javascript
-import tailwindcss from '@tailwindcss/vite'
+import lightningcss from 'vite-plugin-lightningcss'
 
 export default defineConfig({
-  plugins: [react(), tailwindcss()],
+  plugins: [
+    react(),
+    tailwindcss(),
+    lightningcss({
+      browserslist: '>= 0.25%',
+      drafts: {
+        nesting: true,
+      },
+    })
+  ],
+  css: {
+    transformer: 'lightningcss',
+  },
+  build: {
+    cssMinify: 'lightningcss',
+  }
 })
 ```
 
-## 📝 Fonctionnalités non implémentées
+## 📝 Commits Git
 
-Aucune - Toutes les fonctionnalités demandées ont été réalisées.
+Le projet suit une bonne pratique Git avec des commits réguliers et explicites :
+- Initial setup avec Vite + React + Tailwind
+- Backup avant intégration Lightning CSS
+- Configuration Lightning CSS
+- Ajout des fonctionnalités avancées
 
-## 📦 Dépendances principales
-```json
-{
-  "react": "^18.3.1",
-  "react-dom": "^18.3.1",
-  "@tailwindcss/vite": "^4.0.0-beta.7",
-  "vite": "^6.0.1"
-}
-```
+## 🎓 Apprentissages
 
-## 📄 Licence
+Ce projet m'a permis de :
+1. Comprendre l'optimisation CSS avec Lightning CSS
+2. Utiliser le CSS Nesting natif
+3. Découvrir les propriétés logiques CSS
+4. Maîtriser les fonctions CSS modernes (clamp)
+5. Améliorer les performances du CSS en production
 
-Projet réalisé dans le cadre d'un TP académique - Normandie Web School 2024-2025
+---
+
+**Projet réalisé par Telma FERREIRA TORRES**  
+**Master DevOps - Normandie Web School**  
+**Novembre 2025**
