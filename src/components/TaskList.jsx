@@ -11,19 +11,23 @@ function TaskList({ tasks, onDeleteTask, onUpdateTask, onEditTask }) {
     return (
       <div className="space-y-4">
         {tasks.map((task) => (
-          <div 
-          key={task.id} 
-          className="bg-white rounded-lg shadow-md p-4 transform transition-all duration-300 hover:scale-105 hover:shadow-xl animate-in fade-in slide-in-from-bottom-4"
+          <div
+          key={task.id}
+          className="task-card bg-white p-4 rounded-lg shadow-md flex justify-between items-start animate-in fade-in slide-in-from-bottom-2 duration-200"
         >
             <div className="flex items-start justify-between">
               
               <div className="flex-1">
                 <p className="text-gray-800 font-medium">{task.description}</p>
-                <span className={`inline-block mt-2 px-3 py-1 rounded-full text-sm font-semibold
-                  ${task.category === 'Travail' ? 'bg-blue-100 text-blue-800' : ''}
-                  ${task.category === 'Personnel' ? 'bg-green-100 text-green-800' : ''}
-                  ${task.category === 'Urgent' ? 'bg-red-100 text-red-800' : ''}
-                `}>
+                <span
+              className={`category-badge inline-block px-3 py-1 rounded-full text-sm ${
+                task.category === "Travail"
+                  ? "work bg-blue-100 text-blue-800"
+                  : task.category === "Personnel"
+                  ? "personal bg-green-100 text-green-800"
+                  : "urgent bg-red-100 text-red-800"
+              }`}
+                >
                   {task.category}
                 </span>
               </div>

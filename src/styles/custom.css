@@ -1,0 +1,62 @@
+/* Démonstration du CSS Nesting avec Lightning CSS */
+
+.task-card {
+    transition: all 0.3s ease;
+    
+    /* Nesting : style pour l'état hover */
+    &:hover {
+      transform: translateY(-2px) scale(1.02);
+      box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.2);
+    }
+    
+    /* Nesting : style pour les boutons à l'intérieur */
+    & button {
+      transition: all 0.2s ease;
+      
+      &:hover {
+        transform: scale(1.05);
+      }
+      
+      &:active {
+        transform: scale(0.95);
+      }
+    }
+    
+    /* Nesting : style pour le badge de catégorie */
+    & .category-badge {
+      font-weight: 600;
+      letter-spacing: 0.025em;
+      
+      &.work {
+        background-color: rgb(219, 234, 254);
+        color: rgb(30, 64, 175);
+      }
+      
+      &.personal {
+        background-color: rgb(220, 252, 231);
+        color: rgb(22, 101, 52);
+      }
+      
+      &.urgent {
+        background-color: rgb(254, 226, 226);
+        color: rgb(153, 27, 27);
+      }
+    }
+  }
+  
+  /* Utilisation de media query moderne avec nesting */
+  @media (width >= 768px) {
+    .task-card {
+      & button {
+        opacity: 0;
+        
+        &:focus {
+          opacity: 1;
+        }
+      }
+      
+      &:hover button {
+        opacity: 1;
+      }
+    }
+  }
